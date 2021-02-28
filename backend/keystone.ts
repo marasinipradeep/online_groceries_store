@@ -16,7 +16,8 @@ import 'dotenv/config';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
 import { extendGraphqlSchema } from './mutations';
-import 'dotenv/config';
+//import 'dotenv/config';
+
 function check(name: string) {}
 
 const databaseURL =
@@ -48,7 +49,7 @@ export default withAuth(
     // @ts-ignore
     server: {
       cors: {
-        origin: [process.env.FRONTEND_URL],
+        origin: "http://localhost:7777",//[process.env.FRONTEND_URL] || ,
         credentials: true,
       },
     },
